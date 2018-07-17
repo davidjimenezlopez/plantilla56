@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">ADMIN {{ __('Reset Password') }}</div>
+                <div class="card-header">ADMINs {{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,6 +14,8 @@
                         </div>
                     @endif
 
+                   
+                   
                     <form method="POST" action="{{ route('admin.password.email') }}" aria-label="{{ __('Reset Password') }}">
                         @csrf
 
@@ -39,6 +41,9 @@
                             </div>
                         </div>
                     </form>
+                    
+                    
+                    
                 </div>
             </div>
         </div>

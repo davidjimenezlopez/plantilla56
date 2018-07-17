@@ -19,7 +19,9 @@
                 </li>
                 @if (Route::has('login'))
                 @if (Auth::check())
-                <a href="{{ url('/home') }}">Home</a>
+                <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="{{ url('/home') }}">PErfil</a>
+                   </li>
                 @else
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#"  data-toggle="modal" data-target="#loginModal">Login</a>
