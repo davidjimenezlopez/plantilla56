@@ -11,12 +11,13 @@
         <!-- Bootstrap core CSS-->
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <!-- Custom fonts for this template-->
+          <link href="{{asset('js/font-awesome/css/all.css')}}" rel="stylesheet">
         <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">--> 
         <!-- Page level plugin CSS-->
         @yield('css')
        
         <!-- Custom styles for this template-->
-        <link href="{{asset('admin/css/sb-admin.css')}}" rel="stylesheet">
+        <link href="{{asset('adminstyle/css/sb-admin.css')}}" rel="stylesheet">
     </head>
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -45,7 +46,7 @@
     
       
         <!-- Custom scripts for all pages-->
-        <script src="{{asset('admin/js/sb-admin.js')}}"></script>
+        <script src="{{asset('adminstyle/js/sb-admin.js')}}"></script>
         <!-- Custom scripts for this page-->
        
         

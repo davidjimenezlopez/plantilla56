@@ -26,4 +26,17 @@ class AdminController extends Controller
      
         return view('admins.home');
     }
+    
+     public function charts()
+    {
+     
+        return view('admins.charts');
+    }
+    
+      public function tables()
+    {
+     
+        return view('admins.tables');
+    }
+    
 }

@@ -18,6 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/charts', 'HomeController@charts')->name('charts');
+
+   Route::get('/tables', 'HomeController@tables')->name('tables'); 
 Route::get('/users/logout','Auth\LoginController@userLogout')->name('user.logout');
 
 
@@ -30,4 +33,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+    
+    
+    Route::get('/charts', 'AdminController@charts')->name('charts');
+   Route::get('/tables', 'AdminController@tables')->name('tables'); 
+    
 });

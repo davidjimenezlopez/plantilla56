@@ -123,7 +123,7 @@ body.fixed-nav {
   width: auto;
   content: '\f105';
   border: none;
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
 }
 
 #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link .indicator {

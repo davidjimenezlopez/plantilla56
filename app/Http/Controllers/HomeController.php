@@ -26,4 +26,16 @@ class HomeController extends Controller
      
         return view('customers.home');
     }
+    
+     public function charts()
+    {
+     
+        return view('customers.charts');
+    }
+    
+      public function tables()
+    {
+     
+        return view('customers.tables');
+    }
 }
