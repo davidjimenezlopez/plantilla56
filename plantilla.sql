@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2018 a las 16:10:02
+-- Tiempo de generación: 18-07-2018 a las 23:20:32
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
 
@@ -44,7 +44,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `rol`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'administrador', 'administrador@test.com', 'administrador', '$2y$10$krFGcgFS22x2IBm1jBCL7ePMT2guY2QhVwplqEeDX05RYH3GCrUyi', 'bRKULhiYWnhuEo2D603g9OoCPiytct65VLTIZ6yFYS4HuMrVftrIoaDSXfWl', '2018-07-11 05:01:59', '2018-07-13 19:04:32');
+(1, 'administrador', 'administrador@test.com', 'administrador', '$2y$10$krFGcgFS22x2IBm1jBCL7ePMT2guY2QhVwplqEeDX05RYH3GCrUyi', 'sm07DROMwQ4JOLBvnAwTVSSFpn8FYdgNbrGogqjaKImfOEswhrNaSeDnI4K2', '2018-07-11 05:01:59', '2018-07-13 19:04:32'),
+(6, 'administrador23', 'administrador2@test.com3', 'administrador', '$2y$10$9eunB9Ij1GufCPk8iHgbQOWbn5ZWfWPNRgX7qQWOfhpqNtZ/0a30.', NULL, '2018-07-19 02:04:20', '2018-07-19 02:19:37');
 
 -- --------------------------------------------------------
 
@@ -124,6 +125,14 @@ CREATE TABLE `oauth_clients` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `oauth_clients`
+--
+
+INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Laravel Personal Access Client', 'qtCJG9OF5KcRNAom2SMdbZ6w3UChfUnsobeZGYuL', 'http://localhost', 1, 0, 0, '2018-07-17 05:32:02', '2018-07-17 05:32:02'),
+(2, NULL, 'Laravel Password Grant Client', 'vDLQV6a3MTtRTWexVCBBns5n7JU8f38YznGVP1TC', 'http://localhost', 0, 1, 0, '2018-07-17 05:32:02', '2018-07-17 05:32:02');
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +145,13 @@ CREATE TABLE `oauth_personal_access_clients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `oauth_personal_access_clients`
+--
+
+INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2018-07-17 05:32:02', '2018-07-17 05:32:02');
 
 -- --------------------------------------------------------
 
@@ -162,6 +178,14 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('usuario@test.com', '$2y$10$6fhxBQ.3yjBsZe4y5VtK1.6C3xKPSA60wNrL0N7E5f75L/rfwUNmK', '2018-07-17 22:19:55'),
+('administrador@test.com', '$2y$10$r5biqnxfzXAAhNhvb7Xc6eTP8Bx0wTftHysS86ND2c5lcOkVqtOfe', '2018-07-17 22:47:38');
+
 -- --------------------------------------------------------
 
 --
@@ -183,7 +207,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'usuario', 'usuario@test.com', '$2y$10$5pE77xsPQvOYYif/rEqetu5y5YOx/PMLoe7jZa5PMeppkZVDwzDWC', '22m2Qw2bSyg64PllIH9GxP677Qc8Ru3vYJdGn2VvBaN6i8fjDrUie4jzrgIA', '2018-07-13 18:00:31', '2018-07-13 18:00:31');
+(1, 'usuario', 'usuario@test.com', '$2y$10$5pE77xsPQvOYYif/rEqetu5y5YOx/PMLoe7jZa5PMeppkZVDwzDWC', 'mjqEATyi6UOwpFBOPmKZeJZALLecfV80paNu4Gn9e4QF6CkSv10xLzBuhcje', '2018-07-13 18:00:31', '2018-07-13 18:00:31'),
+(2, 'usuario test', 'david81ster@gmail.com', '$2y$10$KxRpIZMTtieIEiFLcoM3fOY8yJcoxqb1ldZgYSp2if8/dPoz.kfEu', 'eNXEaI7q0hjw290P6dY5CARKbAWiHl78sZLq27rDUeipGSuz3tJQwOgGu8SQ', '2018-07-17 05:58:23', '2018-07-17 05:58:23');
 
 --
 -- Índices para tablas volcadas
@@ -257,7 +282,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
@@ -269,19 +294,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

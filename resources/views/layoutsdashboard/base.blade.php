@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,28 +31,17 @@
         </div>
 
         @include('layoutsdashboard/footer')
-
         <!-- Bootstrap core JavaScript-->
         <script src="{{asset('js/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('js/bootstrap/bootstrap.bundle.min.js')}}"></script>
         <!-- Core plugin JavaScript-->
         <script src="{{asset('js/font-awesome/js/all.js')}}"></script>
         <script src="{{asset('js/jquery-easing/jquery.easing.min.js')}}"></script>
-
-
-
         <!-- Page level plugin JavaScript-->
-    
-      
         <!-- Custom scripts for all pages-->
         <script src="{{asset('adminstyle/js/sb-admin.js')}}"></script>
         <!-- Custom scripts for this page-->
-       
-        
-            
-
         @yield('js')
-
         </div>
     </body>
 

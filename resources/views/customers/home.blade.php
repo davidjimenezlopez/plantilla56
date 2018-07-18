@@ -70,7 +70,7 @@
         <div class="card text-white bg-danger o-hidden h-100">
             <div class="card-body">
                 <div class="card-body-icon">
-                    <i class="fa fa-fw fa-support"></i>
+                   <i class="far fa-life-ring"></i>
                 </div>
                 <div class="mr-5">13 New Tickets!</div>
             </div>

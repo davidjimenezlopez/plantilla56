@@ -67,7 +67,7 @@
     
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="{{route('home')}}">
+          <a class="nav-link" href="{{route('admin.dashboard')}}">
             <i class="fas fa-tachometer-alt"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -89,14 +89,14 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
+            <span class="nav-link-text">Gestión de usuarios</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="{{route('admins.index') }}">Administradores</a>
             </li>
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="#">Clientes</a>
             </li>
             <li>
               <a href="#">Second Level Item</a>
