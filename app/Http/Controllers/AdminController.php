@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exports\UsersExport;
+use Excel;
 
 class AdminController extends Controller
 {
@@ -23,20 +25,26 @@ class AdminController extends Controller
      */
     public function index()
     {
-     
+
         return view('admins.home');
     }
-    
-     public function charts()
+
+    public function charts()
     {
-     
+
         return view('admins.charts');
     }
-    
-      public function tables()
+
+    public function tables()
     {
-     
+
         return view('admins.tables');
     }
-    
+
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'usuarios.xlsx');
+    }
+
 }

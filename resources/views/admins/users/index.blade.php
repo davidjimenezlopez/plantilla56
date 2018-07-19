@@ -10,24 +10,24 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">administradores</li>
+        <li class="breadcrumb-item active">Usuarios</li>
       </ol>
       <!-- Example DataTables Card-->
       
        @if(Session::has('message_store'))
        <div class="alert alert-danger">
-                        <strong>admin creado</strong>
+                        <strong>usuario creado</strong>
          </div>
       @endif
       
        @if(Session::has('message_update'))
        <div class="alert alert-danger">
-                        <strong>admin editado</strong>
+                        <strong>usuario editado</strong>
          </div>
       @endif
        @if(Session::has('message_destroy'))
        <div class="alert alert-danger">
-                        <strong>admin eliminado</strong>
+                        <strong>usuario eliminado</strong>
          </div>
       @endif
       
@@ -36,14 +36,14 @@
           <i class="fa fa-table"></i> Data Table Example</div>
         <div class="card-body">
          
-          <a href="{{route('admins.create')}}" class="btn btn-primary">Crear</a>
+          <a href="{{route('users.create')}}" class="btn btn-primary">Crear</a>
+            <a href="{{route('exportar')}}" class="btn btn-primary">Exportar</a>
           
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Position</th>
+                  <th>Name</th>              
                   <th>email</th>                  
                    <th>acciones</th>    
                 
@@ -51,14 +51,13 @@
               </thead>
          
               <tbody>
-               @foreach($admins as $admin)
+               @foreach($users as $user)
                 <tr>
-                  <td>{{$admin->name}}</td>
-                  <td>{{$admin->rol}}</td>
-                  <td>{{$admin->email}}</td>
+                  <td>{{$user->name}}</td>                
+                  <td>{{$user->email}}</td>
                  <td>
-                     <a href="{{route('admins.edit',$admin->id)}}"><i class="fas fa-user-edit"></i></a>
-                     <a href="#" onclick="showConfirmDeleteModal('{{route('admins.destroy',$admin->id)}}','{{$admin->name}}')"><i class="fas fa-trash-alt"></i></a>
+                     <a href="{{route('users.edit',$user->id)}}"><i class="fas fa-user-edit"></i></a>
+                     <a href="#" onclick="showConfirmDeleteModal('{{route('users.destroy',$user->id)}}','{{$user->name}}')"><i class="fas fa-trash-alt"></i></a>
                  </td>
                 
                  

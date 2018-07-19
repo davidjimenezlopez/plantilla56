@@ -96,7 +96,7 @@
               <a href="{{route('admins.index') }}">Administradores</a>
             </li>
             <li>
-              <a href="#">Clientes</a>
+              <a href="{{route('users.index') }}">Clientes</a>
             </li>
             <li>
               <a href="#">Second Level Item</a>

@@ -4,30 +4,30 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Admin;
+use App\User;
 use Hash;
-use App\Http\Requests\StoreAdmins;
-use App\Http\Requests\UpdateAdmins;
+use App\Http\Requests\admin\user\StoreUsers;
+use App\Http\Requests\admin\user\UpdateUsers;
 
-class AdminAdminsController extends Controller
+class AdminUsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
+    
+      public function __construct()
     {
         $this->middleware('auth:admin');
     }
 
-
+    
     public function index()
     {
         //
-        $admins=Admin::all();
-        return view('admins.admins.index',compact('admins'));
+          $users=User::all();
+        return view('admins.users.index',compact('users'));
     }
 
     /**
@@ -38,7 +38,7 @@ class AdminAdminsController extends Controller
     public function create()
     {
         //
-        return view('admins.admins.create');
+         return view('admins.users.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class AdminAdminsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAdmins $request)
+    public function store(StoreUsers $request)
     {
         //
         $validated = $request->validated();
@@ -58,16 +58,15 @@ class AdminAdminsController extends Controller
             'name'=>$request->input('name'), 
             'email'=>$request->input('email') , 
             'password'=>Hash::make($request->input('password')),
-            'rol'=>$request->input('rol')
+         
 
 
 
         );
 
-        $admin=Admin::create($data);
+        User::create($data);
 
-        return redirect()->route('admins.index')->with('message_store', true);
-
+        return redirect()->route('users.index')->with('message_store', true);
     }
 
     /**
@@ -90,8 +89,8 @@ class AdminAdminsController extends Controller
     public function edit($id)
     {
         //
-        $admin=Admin::find($id);
-        return view('admins.admins.edit',compact('admin'));
+          $user=User::find($id);
+        return view('admins.users.edit',compact('user'));
     }
 
     /**
@@ -101,34 +100,29 @@ class AdminAdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAdmins $request, $id)
+    public function update(UpdateUsers $request, $id)
     {
         //
-        
-        
-        
-        $validated = $request->validated();
+         $validated = $request->validated();
 
 
-        $admin=Admin::find($id);
+        $user=User::find($id);
 
         if ($request->password) {
             $password= Hash::make($request->input('password'));
         } else {
-            $password=$admin->password;
+            $password=$user->password;
         }
 
         $data = array(
-            'name' => $request->input('name'),
-            'rol' => $request->input('rol'),
+            'name' => $request->input('name'),         
             'email' => $request->input('email'),           
             'password' =>$password,
         );
 
-        $admin->update($data);
+        $user->update($data);
         
-        return redirect()->route('admins.index')->with('message_update', true);
-
+        return redirect()->route('users.index')->with('message_update', true);
     }
 
     /**
@@ -140,7 +134,7 @@ class AdminAdminsController extends Controller
     public function destroy($id)
     {
         //
-         Admin::destroy($id);
-         return redirect()->route('admins.index')->with('message_destroy', true);
+          User::destroy($id);
+         return redirect()->route('users.index')->with('message_destroy', true);
     }
 }

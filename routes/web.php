@@ -38,5 +38,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/charts', 'AdminController@charts')->name('charts');
    Route::get('/tables', 'AdminController@tables')->name('tables'); 
      Route::resource('admins', 'admin\AdminAdminsController'); 
+      Route::resource('users', 'admin\AdminUsersController'); 
+       Route::resource('users', 'admin\AdminUsersController'); 
+     Route::get('/exportar', 'AdminController@export')->name('exportar'); 
     
 });

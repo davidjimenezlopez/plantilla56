@@ -34,3 +34,31 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal" tabindex="-1" role="dialog"  id="deleteModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         Esta seguro de eliminar el usuario <strong><span id="deleteName"></span></strong>? 
+        
+        
+    
+      </div>
+      <div class="modal-footer">
+            <form method="post" action="" id="deleteForm">
+            @csrf
+             {{ method_field('DELETE') }}
+                <button type="submit" class="btn btn-warning" value="Confirmar">Confirmar </button>  
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>

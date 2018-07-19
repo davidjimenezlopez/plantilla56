@@ -10,19 +10,19 @@
     <li class="breadcrumb-item">
         <a href="#">Dashboard</a>
     </li>
-    <li class="breadcrumb-item"><a href="{{route('admins.index') }}">administradores</a></li>
+    <li class="breadcrumb-item"><a href="{{route('users.index') }}">usuarios</a></li>
     <li class="breadcrumb-item active">crear</li>
 </ol>
 <!-- Example DataTables Card-->
 <div class="col-lg-8">
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fas fa-user-cog"></i>Crear administradores del sistema</div>
+            <i class="fas fa-user-cog"></i>Crear usuarios</div>
         <div class="card-body">
 
 
 
-            <form method="post" action="{{route('admins.store')}}">
+            <form method="post" action="{{route('users.store')}}">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email address</label>
@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" name="name" value="{{ old('name') }}">
+                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email" name="name" value="{{ old('name') }}">
                     @if ($errors->has('name')) 
                     <div class="alert alert-danger">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -46,14 +46,6 @@
                     @endif
                 </div>
 
-
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Rol</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="rol">
-                        <option value="administrador">administrador</option>
-                      
-                    </select>
-                </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
