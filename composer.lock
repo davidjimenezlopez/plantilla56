@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae6485a6b9f69a264fd3ad48d994f10f",
+    "content-hash": "4eb8656546e0011c28cc31411d18b21d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -60,21 +60,21 @@
         },
         {
             "name": "barryvdh/laravel-cors",
-            "version": "v0.11.2",
+            "version": "v0.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-cors.git",
-                "reference": "7969a52f52d0d9a04b42565d25ac9994b8c83332"
+                "reference": "03492f1a3bc74a05de23f93b94ac7cc5c173eec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/7969a52f52d0d9a04b42565d25ac9994b8c83332",
-                "reference": "7969a52f52d0d9a04b42565d25ac9994b8c83332",
+                "url": "https://api.github.com/repos/barryvdh/laravel-cors/zipball/03492f1a3bc74a05de23f93b94ac7cc5c173eec9",
+                "reference": "03492f1a3bc74a05de23f93b94ac7cc5c173eec9",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "^1.2",
-                "illuminate/support": "5.5.x|5.6.x|5.7.x",
+                "illuminate/support": "^5.5|^6",
                 "php": ">=7",
                 "symfony/http-foundation": "^3.1|^4",
                 "symfony/http-kernel": "^3.1|^4"
@@ -118,7 +118,7 @@
                 "crossdomain",
                 "laravel"
             ],
-            "time": "2018-09-06T13:20:53+00:00"
+            "time": "2019-08-28T11:27:11+00:00"
         },
         {
             "name": "defuse/php-encryption",
